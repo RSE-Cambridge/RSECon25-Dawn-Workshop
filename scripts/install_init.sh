@@ -8,7 +8,7 @@ chmod g-w ${USER_RDS}
 
 INSTALL_RDS=${USER_RDS}/install
 mkdir -p ${INSTALL_RDS}
-cp *_install.sh ${INSTALL_RDS}
+cp ai_install.sh  miniforge3_install.sh  mlvenv_dawn.sh ${INSTALL_RDS}
 
 # Link default user directory for Jupyter kernels
 # to user sub-directory of rds-rsecon,
