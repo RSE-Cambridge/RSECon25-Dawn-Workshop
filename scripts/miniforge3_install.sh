@@ -2,10 +2,19 @@
 #SBATCH --job-name=miniforge3_install  # create a short name for your job
 #SBATCH --output=%x.log         # job output file
 #SBATCH --partition=pvc9        # cluster partition to be used
-#SBATCH --account=support-gpu   # slurm project account
 #SBATCH --nodes=1               # number of nodes
 #SBATCH --gres=gpu:1            # number of allocated gpus per node
 #SBATCH --time=00:30:00         # total run time limit (HH:MM:SS)
+
+# Script for installing the Miniforge3 flavour of conda
+# on the Dawn supercomputer.
+# For information about miniforge, see:
+# https://github.com/conda-forge/miniforge
+
+# This script may be run interactively on a Dawn login or compute node:
+# bash ./miniforge3_install.sh
+# or it may be run on the Slurm batch system:
+# sbatch --acount=<project account> ./miniforge3_install.sh
 
 # Start timer.
 T0=${SECONDS}
@@ -17,11 +26,9 @@ echo ""
 set -e
 
 # Delete any existing conda installation,
-# and link default top-level location to subdirectory of hpc-work.
-# Note: there is no backup of files under hpc-work - see:
-# https://docs.hpc.cam.ac.uk/hpc/user-guide/io_management.html
+# and link default top-level location to user subdirectory of rds-rsecon.
 CONDA_HOME="${HOME}/${CONDA_ENV,,}"
-CONDA_RDS="${HOME}/rds/hpc-work/${CONDA_ENV,,}"
+CONDA_RDS="${HOME}/rds/rds-rsecon/$(whoami)/${CONDA_ENV,,}"
 rm -rf "${CONDA_RDS}"
 rm -rf "${CONDA_HOME}"
 mkdir "${CONDA_RDS}"
