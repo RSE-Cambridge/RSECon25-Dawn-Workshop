@@ -14,7 +14,7 @@ cp ai_install.sh  miniforge3_install.sh  mlvenv_dawn.sh ${INSTALL_RDS}
 # to user sub-directory of rds-rsecon,
 # deleting any pre-existing kernels.
 JUPYTER_KERNELS_HOME="${HOME}/.local/share/jupyter/kernels"
-JUPYTER_KERNELS_RDS="${HOME}/rds/rds-rsecon/$(whoami)/jupyter/kernels"
+JUPYTER_KERNELS_RDS="${USER_RDS}/jupyter/kernels"
 
 rm -rf ${JUPYTER_KERNELS_HOME}
 rm -rf ${JUPYTER_KERNELS_RDS}
