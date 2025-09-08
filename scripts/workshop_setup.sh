@@ -11,4 +11,4 @@ ln -s ${WORKSHOP_RDS}/miniforge3 ~/miniforge3
 
 JUPYTER_KERNELS_HOME="${HOME}/.local/share/jupyter/kernels"
 JUPYTER_KERNELS_RDS="${WORKSHOP_RDS}/jupyter/kernels"
-cp -rp ${JUPYTER_KERNELS_RDS}/* ${JUPYTER_KERNELS_HOME}
+cp -r ${JUPYTER_KERNELS_RDS}/* ${JUPYTER_KERNELS_HOME}
