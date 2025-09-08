@@ -31,7 +31,7 @@ CONDA_HOME="${HOME}/${CONDA_ENV,,}"
 CONDA_RDS="${HOME}/rds/rds-rsecon/$(whoami)/${CONDA_ENV,,}"
 rm -rf "${CONDA_RDS}"
 rm -rf "${CONDA_HOME}"
-mkdir "${CONDA_RDS}"
+mkdir -p "${CONDA_RDS}"
 ln -s "${CONDA_RDS}" "${CONDA_HOME}"
 
 # Download and run the installation script.
