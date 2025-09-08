@@ -45,6 +45,9 @@ rm "${INSTALL_SCRIPT}"
 source ${CONDA_HOME}/bin/activate
 conda update -n base -c conda-forge conda -y
 
+# Allow group same non-write permissions as user.
+chmod -R g=u-w "${CONDA_RDS}"
+
 # Report installation time.
 echo ""
 echo "Installation of miniforge3 completed: $(date)"

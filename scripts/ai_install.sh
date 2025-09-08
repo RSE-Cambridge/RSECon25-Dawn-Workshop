@@ -104,6 +104,9 @@ python -m pip install --upgrade pip
 python -m pip install intel-extension-for-openxla
 python -m pip install -r https://raw.githubusercontent.com/intel/intel-extension-for-openxla/main/test/requirements.txt
 
+# Allow group same non-write permissions as user.
+chmod -R g=u-w ~/miniforge3/envs/ai
+
 # Create Jupyter kernel.
 pip install ipykernel
 python -m ipykernel install --user --name=${ENV_NAME}

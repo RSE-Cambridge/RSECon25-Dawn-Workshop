@@ -34,9 +34,9 @@ module load intelpython-conda/2025.0
 VENV_DIR=$(pwd)/${ENV_NAME}
 rm -rf ${VENV_DIR}
 python -m venv --system-site-packages ${VENV_DIR}
-CMD="source ${VENV_DIR}/bin/activate"
-echo ${CMD} >> ${SETUP}
-${CMD}
+sed -i "s@${HOME}@\${HOME}@g" ${VENV_DIR}/bin/activate
+source "${VENV_DIR}/bin/activate"
+echo "\${HOME}/${ENV_NAME}/bin/activate" >> ${SETUP}
 pip install --upgrade pip
 
 # Clone project, and install packages in virtual environment.
@@ -45,6 +45,9 @@ git clone https://github.com/kh296/${PROJ_NAME}
 cd ${PROJ_NAME}
 git checkout xpu
 pip install --index-url https://download.pytorch.org/whl/xpu --extra-index-url https://pypi.org/simple . ipywidgets
+
+# Allow group same non-write permissions as user.
+chmod -R g=u-w ${VENV_DIR}
 
 # Create Jupyter kernel.
 python -m ipykernel install --user --name=${PROJ_NAME}
