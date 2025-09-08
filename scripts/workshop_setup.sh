@@ -14,6 +14,6 @@ ln -s ${WORKSHOP_RDS}/miniforge3 ~/miniforge3
 JUPYTER_KERNELS_HOME="${HOME}/.local/share/jupyter/kernels"
 JUPYTER_KERNELS_RDS="${WORKSHOP_RDS}/jupyter/kernels"
 cp -r ${JUPYTER_KERNELS_RDS}/* ${JUPYTER_KERNELS_HOME}
-for VENV in ai practical-ml-with-pytorch; do
-    sed -i "s@/home/.*/@${HOME}@g" ${JUPYTER_KERNELS_HOME}/${VENV}/kernel.json
+for VENV in $(ls ${JUPYTER_KERNELS_HOME}); do
+    sed -i "s@/.*/rds/@${HOME}/rds/@g" ${JUPYTER_KERNELS_HOME}/${VENV}/kernel.json
 done
