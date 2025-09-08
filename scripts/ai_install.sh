@@ -106,7 +106,7 @@ python -m pip install -r https://raw.githubusercontent.com/intel/intel-extension
 
 # Create Jupyter kernel.
 pip install ipykernel
-python -m ipykernel install --user --name=${PROJ_NAME}
+python -m ipykernel install --user --name=${ENV_NAME}
 
 echo "${SOFTWARE} installation completed: $(date)"
 echo "Installation time: $((${SECONDS}-${T0})) seconds"
