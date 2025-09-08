@@ -1,7 +1,7 @@
 #/bin/bash
 # Script for copying workshop setup scripts and kernels.
 
-WORKSHOP_RDS="/home/kh296/rds/rds-rsecon/kh296"
+WORKSHOP_RDS="${HOME}/rds/rds-rsecon/kh296"
 
 mkdir -p ../install
 cp ${WORKSHOP_RDS}/install/*setup.sh ../install
