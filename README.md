@@ -75,8 +75,8 @@ Move to the workshop examples directory, and submit the two jobs that
 perform multi-node processing:
 ```
 cd ~/RSECon25-Dawn-Workshop/examples
-sbatch --account=training-gpu-dawn run_mnist_classify_ddp.sh
-sbatch --account=training-gpu-dawn run_lightning_toy_example.sh
+sbatch --account=training-dawn-gpu run_mnist_classify_ddp.sh
+sbatch --account=training-dawn-gpu run_lightning_toy_example.sh
 ```
 ## 6. Run Jupyter notebooks
 
