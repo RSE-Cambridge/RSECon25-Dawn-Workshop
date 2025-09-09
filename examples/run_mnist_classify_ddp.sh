@@ -1,5 +1,6 @@
 #!/bin/bash -l
-#SBATCH --job-name=ddp-torch   # create a short name for your job
+#SBATCH --job-name=ddp-torch   # create a short name for the job
+#SBATCH --output=%x.log        # job output file
 #SBATCH --partition=pvc9       # cluster partition to be used
 #SBATCH --account=support-gpu  # slurm project account
 #SBATCH --nodes=2              # number of nodes

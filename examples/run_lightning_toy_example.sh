@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=lightning   # job output file
+#SBATCH --job-name=lightning   # create a short name for the job
 #SBATCH --output=%x.log        # job output file
 #SBATCH --partition=pvc9       # cluster partition to be used
 #SBATCH --nodes=2              # number of nodes
