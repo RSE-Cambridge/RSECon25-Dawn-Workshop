@@ -1,3 +1,6 @@
+# Install area (used to collect scripts for environment setup).
+install/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
