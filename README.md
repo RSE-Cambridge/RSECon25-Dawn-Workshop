@@ -58,7 +58,7 @@ account on Dawn.
 
 Clone this repository to your home directory:
 ```
-git clone
+git clone https://github.com/RSE-Cambridge/RSECon25-Dawn-Workshop
 ```
 Set up the environement:
 ```
