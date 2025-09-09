@@ -26,7 +26,7 @@ Interactive Apps -> Jupyter Notebook
 
 On the Jupyter Notebook form enter:
 ```
-- Project account: the name of your Slurm project account
+- Project account: training-dawn-gpu
 - Partition: pvc9
 - Reservation [leave blank]:
 - Number of hours: 2
