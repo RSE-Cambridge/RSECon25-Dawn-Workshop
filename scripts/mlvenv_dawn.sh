@@ -34,7 +34,7 @@ module load intelpython-conda/2025.0
 VENV_DIR=$(pwd)/${ENV_NAME}
 rm -rf ${VENV_DIR}
 python -m venv --system-site-packages ${VENV_DIR}
-sed -i "s@${HOME}@\${HOME}@g" ${VENV_DIR}/bin/activate
+sed -i "s@${HOME}@source \${HOME}@g" ${VENV_DIR}/bin/activate
 source "${VENV_DIR}/bin/activate"
 echo "\${HOME}/${ENV_NAME}/bin/activate" >> ${SETUP}
 pip install --upgrade pip
