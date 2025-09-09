@@ -4,7 +4,7 @@
 #SBATCH --partition=pvc9        # cluster partition to be used
 #SBATCH --nodes=1               # number of nodes
 #SBATCH --gres=gpu:1            # number of allocated gpus per node
-#SBATCH --time=01:00:00         # total run time limit (HH:MM:SS)
+#SBATCH --time=02:00:00         # total run time limit (HH:MM:SS)
 
 # Script for installing AI frameworks on Dawn supercomputer,
 # including user installation of pytorch (version 2.8).
@@ -77,14 +77,14 @@ channels:
   - nodefaults
 dependencies:
   - intelpython3_full
-  - level-zero
+#  - level-zero
   - python=3.11
   - pip
   - pip:
     - --index-url https://download.pytorch.org/whl/xpu
     - --extra-index-url https://pypi.org/simple
-    - tensorflow==2.15.0
-    - intel-extension-for-tensorflow[xpu]
+#    - tensorflow==2.15.0
+#    - intel-extension-for-tensorflow[xpu]
     - lightning[extra]
     - litmodels
     - torch==2.8.0
